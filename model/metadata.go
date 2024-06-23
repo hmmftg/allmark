@@ -11,6 +11,7 @@ import (
 // MetaData defines meta-attributes of repository items.
 type MetaData struct {
 	Language         string
+	Direction        string
 	CreationDate     time.Time
 	LastModifiedDate time.Time
 	Tags             []string

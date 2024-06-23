@@ -15,11 +15,11 @@ import (
 	"os/exec"
 	"path/filepath"
 
+	auth "github.com/abbot/go-http-auth"
 	"github.com/andreaskoch/allmark/common/certificates"
 	"github.com/andreaskoch/allmark/common/logger/loglevel"
 	"github.com/andreaskoch/allmark/common/ports"
 	"github.com/andreaskoch/allmark/common/util/fsutil"
-	"github.com/abbot/go-http-auth"
 	"github.com/mitchellh/go-homedir"
 )
 
@@ -43,11 +43,12 @@ const (
 	DefaultHTTPSCertName             = "cert.pem"
 	DefaultHTTPSKeyName              = "cert.key"
 	DefaultForceHTTPS                = false
-	DefaultLanguage                  = "en"
+	DefaultLanguage                  = "fa"
+	DefaultDirection                 = "rtl"
 	DefaultLogLevel                  = loglevel.Error
-	DefaultIndexingEnabled           = false
+	DefaultIndexingEnabled           = true
 	DefaultIndexingIntervalInSeconds = 60
-	DefaultLiveReloadEnabled         = false
+	DefaultLiveReloadEnabled         = true
 	DefaultConversionDocxEnabled     = true
 	DefaultAuthenticationEnabled     = false
 	DefaultUserStoreFileName         = "users.htpasswd"
@@ -190,6 +191,7 @@ func Default(baseFolder string) *Config {
 	config.Server.Authentication.UserStoreFileName = DefaultUserStoreFileName
 
 	config.Web.DefaultLanguage = DefaultLanguage
+	config.Web.DefaultDirection = DefaultDirection
 
 	// Publisher Information
 	config.Web.Publisher = UserInformation{}
@@ -291,10 +293,11 @@ type Authentication struct {
 
 // Web contains all web-site related properties such as the language, authors and publisher information.
 type Web struct {
-	DefaultLanguage string
-	DefaultAuthor   string
-	Publisher       UserInformation
-	Authors         map[string]UserInformation
+	DefaultLanguage  string
+	DefaultDirection string
+	DefaultAuthor    string
+	Publisher        UserInformation
+	Authors          map[string]UserInformation
 }
 
 // UserInformation contains user-related properties such as the Name and Email address.

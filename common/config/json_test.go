@@ -59,13 +59,13 @@ func Test_SerializeConfig_JSONContainsConfigValues(t *testing.T) {
 	// assert: json contains theme folder
 	if !strings.Contains(json, config.Server.ThemeFolderName) {
 		t.Fail()
-		t.Logf("The produced json does not contain the 'ThemeFolderName' value %q. The produced JSON is this: %s", config.Server.ThemeFolderName, json)
+		t.Logf("The produced json does not contain the 'ThemeFolderName' value %s. The produced JSON is this: %s", config.Server.ThemeFolderName, json)
 	}
 
 	// assert: json contains http enabled
 	if !strings.Contains(json, "true") {
 		t.Fail()
-		t.Logf("The produced json does not contain the 'Http Enabled' value %q. The produced JSON is this: %s", config.Server.HTTP.Enabled, json)
+		t.Logf("The produced json does not contain the 'Http Enabled' value %t. The produced JSON is this: %s", config.Server.HTTP.Enabled, json)
 	}
 }
 

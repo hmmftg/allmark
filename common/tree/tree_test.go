@@ -35,7 +35,7 @@ func Test_New_NameOfRootIsSet(t *testing.T) {
 
 	// assert
 	if tree.Root().Name() != name {
-		t.Errorf("The Name of the a new tree should be %q but was %q", name, tree.Root().Name())
+		t.Errorf("The Name of the a new tree should be %v but was %v", name, tree.Root().Name())
 	}
 }
 
@@ -49,7 +49,7 @@ func Test_Tree_String_EmptyTree(t *testing.T) {
 	// assert
 	expected := "<empty-tree>"
 	if result != expected {
-		t.Errorf("The string method of an empty tree should return %q but returned %q instead.", expected, result)
+		t.Errorf("The string method of an empty tree should return %v but returned %v instead.", expected, result)
 	}
 }
 
@@ -69,7 +69,7 @@ func Test_Tree_String_NonEmptyTree(t *testing.T) {
     - root level child 2
         - 2nd level child`
 	if result != expected {
-		t.Errorf("The string method of the tree should return %q but returned %q instead.", expected, result)
+		t.Errorf("The string method of the tree should return %v but returned %v instead.", expected, result)
 	}
 }
 
@@ -83,7 +83,7 @@ func Test_Tree_Insert_ValidPath_ResultIsTrue(t *testing.T) {
 	// assert
 	expected := true
 	if result != expected {
-		t.Errorf("The Insert method should return %q when a valid path is inserted but returned %q instead.", expected, result)
+		t.Errorf("The Insert method should return %v when a valid path is inserted but returned %v instead.", expected, result)
 	}
 }
 
@@ -97,7 +97,7 @@ func Test_Tree_Insert_InvalidPath_ResultIsFalse(t *testing.T) {
 	// assert
 	expected := false
 	if result != expected {
-		t.Errorf("The Insert method should return %q when an invalid path is inserted but returned %q instead.", expected, result)
+		t.Errorf("The Insert method should return %v when an invalid path is inserted but returned %v instead.", expected, result)
 	}
 }
 
@@ -128,7 +128,7 @@ func Test_Tree_Insert_TwoPaths_StructureIsAsExpected(t *testing.T) {
     - child 1
     - child 2`
 	if result != expected {
-		t.Errorf("The tree structure should look like this %q but actually looks loke this %q instead.", expected, result)
+		t.Errorf("The tree structure should look like this %v but actually looks loke this %v instead.", expected, result)
 	}
 }
 
@@ -156,7 +156,7 @@ func Test_Tree_Insert_ExistingTree_TreeIsUpdated(t *testing.T) {
     - child 3`
 
 	if result != expected {
-		t.Errorf("The tree structure should look like this %q but actually looks loke this %q instead.", expected, result)
+		t.Errorf("The tree structure should look like this %v but actually looks loke this %v instead.", expected, result)
 	}
 }
 
@@ -171,7 +171,7 @@ func Test_Tree_Delete_ValidPath_ResultIsTrue(t *testing.T) {
 	// assert
 	expected := true
 	if result != expected {
-		t.Errorf("The Delete method should return %q when a valid path is deleted but returned %q instead.", expected, result)
+		t.Errorf("The Delete method should return %v when a valid path is deleted but returned %v instead.", expected, result)
 	}
 }
 
@@ -185,7 +185,7 @@ func Test_Tree_Delete_InvalidPath_ResultIsFalse(t *testing.T) {
 	// assert
 	expected := false
 	if result != expected {
-		t.Errorf("The Delete method should return %q when an invalid path is deleted but returned %q instead.", expected, result)
+		t.Errorf("The Delete method should return %v when an invalid path is deleted but returned %v instead.", expected, result)
 	}
 }
 
@@ -199,7 +199,7 @@ func Test_Tree_Delete_EmptyPath_ResultIsFalse(t *testing.T) {
 	// assert
 	expected := false
 	if result != expected {
-		t.Errorf("The Delete method should return %q when an invalid path is deleted but returned %q instead.", expected, result)
+		t.Errorf("The Delete method should return %v when an invalid path is deleted but returned %v instead.", expected, result)
 	}
 }
 
@@ -216,7 +216,7 @@ func Test_Tree_Delete_ThirdChild_StructureIsAsExpected(t *testing.T) {
 	// assert result
 	expected := true
 	if result != expected {
-		t.Errorf("The Delete method should return %q when an invalid path is deleted but returned %q instead.", expected, result)
+		t.Errorf("The Delete method should return %v when an invalid path is deleted but returned %v instead.", expected, result)
 	}
 
 	// assert: structure
@@ -225,7 +225,7 @@ func Test_Tree_Delete_ThirdChild_StructureIsAsExpected(t *testing.T) {
     - child 1
     - child 2`
 	if stringResult != expectedStringResult {
-		t.Errorf("The tree structure should look like this %q but actually looks loke this %q instead.", expectedStringResult, stringResult)
+		t.Errorf("The tree structure should look like this %v but actually looks loke this %v instead.", expectedStringResult, stringResult)
 	}
 }
 
@@ -241,7 +241,7 @@ func Test_Tree_GetNode_EmptyTree_ResultIsNil(t *testing.T) {
 
 	// assert
 	if result != expected {
-		t.Errorf("Requesting a node from an empty tree should always return %q but returned %q instead.", expected, result)
+		t.Errorf("Requesting a node from an empty tree should always return %v but returned %v instead.", expected, result)
 	}
 }
 
@@ -262,7 +262,7 @@ func Test_Tree_GetNode_InvalidPath_ResultIsNil(t *testing.T) {
 
 	// assert
 	if result != expected {
-		t.Errorf("Requesting a node from a tree with an invalid path %q should return %q but returned %q instead.", path, expected, result)
+		t.Errorf("Requesting a node from a tree with an invalid path %v should return %v but returned %v instead.", path, expected, result)
 	}
 }
 
@@ -282,6 +282,6 @@ func Test_Tree_GetNode_ComplexTree_ExistingPath_ResultIsNotNull(t *testing.T) {
 
 	// assert
 	if result == nil {
-		t.Errorf("Requesting a node from the tree %s with the path %q should return a node but returned %q instead.", tree, path, result)
+		t.Errorf("Requesting a node from the tree %s with the path %v should return a node but returned %v instead.", tree, path, result)
 	}
 }

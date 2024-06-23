@@ -31,6 +31,7 @@ type Base struct {
 	Description string `json:"description"`
 
 	LanguageTag      string `json:"languageTag"`
+	DirectionTag     string `json:"directionTag"`
 	CreationDate     string `json:"creationdate"`
 	LastModifiedDate string `json:"lastmodifieddate"`
 

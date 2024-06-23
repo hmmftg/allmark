@@ -36,6 +36,7 @@ func getBaseModel(root, item *model.Item, config config.Config) viewmodel.Base {
 		Description: item.Description,
 
 		LanguageTag:      getLanguageCode(item.MetaData.Language),
+		DirectionTag:     getDirectionCode(item.MetaData.Direction),
 		CreationDate:     getFormattedDate(item.MetaData.CreationDate),
 		LastModifiedDate: getFormattedDate(item.MetaData.LastModifiedDate),
 
@@ -68,6 +69,14 @@ func getLanguageCode(languageHint string) string {
 	}
 
 	return languageHint
+}
+
+func getDirectionCode(directionHint string) string {
+	if directionHint == "" {
+		return config.DefaultDirection
+	}
+
+	return directionHint
 }
 
 func getPageTitleForItem(rootItem, item *model.Item) string {

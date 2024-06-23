@@ -34,7 +34,7 @@ func Test_Node_String_SingleNode_ResultMarkdownListStyle(t *testing.T) {
 	// assert
 	expected := "- " + name
 	if result != expected {
-		t.Errorf("The String method of the node should return %q but returned %q instead.", expected, result)
+		t.Errorf("The String method of the node should return %v but returned %v instead.", expected, result)
 	}
 }
 
@@ -54,7 +54,7 @@ func Test_Node_String_MultipleNodes_ResultIsIndentedMarkdownList(t *testing.T) {
         - first level child node 1
         - first level child node 2`
 	if strings.TrimSpace(result) != strings.TrimSpace(expected) {
-		t.Errorf(`The String method of the node should return %q but returned %q instead.`, expected, result)
+		t.Errorf(`The String method of the node should return %v but returned %v instead.`, expected, result)
 	}
 }
 
@@ -68,7 +68,7 @@ func Test_Node_Name_EmptyNode_ResultIsSpecifiedNodeName(t *testing.T) {
 	// assert
 	expected := "<no-name-assigned>"
 	if result != expected {
-		t.Errorf("The name of an empty node should be %q but was %q instead.", expected, result)
+		t.Errorf("The name of an empty node should be %v but was %v instead.", expected, result)
 	}
 }
 
@@ -82,7 +82,7 @@ func Test_Node_Name_NonEmptyNode_ResultIsSpecifiedNodeName(t *testing.T) {
 
 	// assert
 	if result != name {
-		t.Errorf("The name of the node should be %q but was %q.", name, result)
+		t.Errorf("The name of the node should be %v but was %v.", name, result)
 	}
 }
 
@@ -96,7 +96,7 @@ func Test_Node_Value_IsNil_ResultIsNil(t *testing.T) {
 
 	// assert
 	if result != expected {
-		t.Errorf("The node value should be %q but was %q instead.", expected, result)
+		t.Errorf("The node value should be %v but was %v instead.", expected, result)
 	}
 }
 
@@ -110,7 +110,7 @@ func Test_Node_Value_IsNotNull_ResultAsSpecified(t *testing.T) {
 
 	// assert
 	if result != expected {
-		t.Errorf("The node value should be %q but was %q instead.", expected, result)
+		t.Errorf("The node value should be %v but was %v instead.", expected, result)
 	}
 }
 
@@ -123,7 +123,7 @@ func Test_Node_Parent_NoParentSpecified_ResultIsNil(t *testing.T) {
 
 	// assert
 	if result != nil {
-		t.Errorf("The parent of the node should be %q but was %q.", nil, result)
+		t.Errorf("The parent of the node should be %v but was %v.", nil, result)
 	}
 }
 

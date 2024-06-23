@@ -5,11 +5,12 @@
 package orchestrator
 
 import (
-	"github.com/andreaskoch/allmark/common/route"
-	"github.com/andreaskoch/allmark/web/view/viewmodel"
 	"fmt"
 	"math"
 	"net/url"
+
+	"github.com/andreaskoch/allmark/common/route"
+	"github.com/andreaskoch/allmark/web/view/viewmodel"
 )
 
 var (
@@ -209,7 +210,7 @@ func getTagCloudEntryLevel(numberOfChildren, minNumberOfChildren, maxNumberOfChi
 
 	// check the level count
 	if levelCount < 0 {
-		panic(fmt.Sprintf("The level count must be greater than 0.", levelCount))
+		panic(fmt.Sprintf("The level count '%d' must be greater than 0.", levelCount))
 	}
 
 	// calculate the ratio between the "number of children" to the "maximum number" of children (0, 1]

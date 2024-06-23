@@ -69,13 +69,13 @@ func CreateFile(filePath string) (success bool, err error) {
 	directory := filepath.Dir(filePath)
 	if !DirectoryExists(directory) {
 		if !CreateDirectory(directory) {
-			return false, fmt.Errorf("Cannot create the directory for the given file %q.", filePath)
+			return false, fmt.Errorf("Cannot create the directory for the given file %v.", filePath)
 		}
 	}
 
 	// create the file
 	if _, err := os.Create(filePath); err != nil {
-		return false, fmt.Errorf("Could not create file %q. Error: ", filePath, err)
+		return false, fmt.Errorf("Could not create file %v. Error: %v", filePath, err)
 	}
 
 	return true, nil

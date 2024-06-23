@@ -30,7 +30,7 @@ func init() {
 }
 
 const masterTemplate = `<!DOCTYPE HTML>
-<html lang="{{.LanguageTag}}" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns#" prefix="article: http://ogp.me/ns/article#">
+<html lang="{{.LanguageTag}}" dir="{{.DirectionTag}}" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns#" prefix="article: http://ogp.me/ns/article#">
 <head>
 	<base href="{{ .BaseURL }}">
 
@@ -129,7 +129,7 @@ const masterTemplate = `<!DOCTYPE HTML>
 	</nav>
 
 	<section class="allmark-promo">
-		powered by <a href="https://github.com/andreaskoch/allmark">allmark - the markdown webserver</a>
+		powered by <a href="https://pooya.ir">Pooyc Doc Server</a>
 	</section>
 </footer>
 
@@ -183,11 +183,6 @@ $(function() {
 </script>
 {{end}}
 {{end}}
-
-<!-- github ribbon -->
-<a href="https://github.com/andreaskoch/allmark" class="ribbon">
-	<img style="position: absolute; top: 0; left: 0; border: 0;" src="/theme/github-ribbon.png" alt="Fork allmark on GitHub">
-</a>
 
 </body>
 </html>`

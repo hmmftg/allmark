@@ -200,7 +200,8 @@ The **configuration file** has a **JSON format** and is located in `.allmark/con
 		}
 	},
 	"Web": {
-		"DefaultLanguage": "en",
+		"DefaultLanguage": "fa",
+		"DefaultDirection": "rtl",
 		"DefaultAuthor": "",
 		"Publisher": {
 			"Name": "",

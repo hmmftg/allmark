@@ -5,12 +5,14 @@
 package search
 
 import (
+	"strings"
+
+	"github.com/andreaskoch/allmark/common/fulltext"
+
 	"github.com/andreaskoch/allmark/common/logger"
 	"github.com/andreaskoch/allmark/common/route"
 	"github.com/andreaskoch/allmark/model"
-	"github.com/andreaskoch/fulltext"
 	"github.com/spf13/afero"
-	"strings"
 )
 
 type indexValueProvider func(item *model.Item) []string
